@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Waste2Sort</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-color: #e8f5e9;
+        }
+        select, button {
+            padding: 10px;
+            margin: 10px;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Waste2Sort ♻️</h1>
+<p>Select your waste item:</p>
+
+<select id="item">
+    <option value="plastic">Plastic Bottle</option>
+    <option value="paper">Paper</option>
+    <option value="glass">Glass</option>
+    <option value="food">Food Waste</option>
+    <option value="battery">Battery</option>
+</select>
+
+<br>
+
+<button onclick="checkWaste()">Check</button>
+
+<div id="result"></div>
+
+<script>
+function checkWaste() {
+    let item = document.getElementById("item").value;
+    let result = "";
+
+    if (item === "plastic") {
+        result = "Recycle ♻️. Reuse as plant pot. Avoid burning.";
+    } 
+    else if (item === "paper") {
+        result = "Recycle ♻️. Use as draft paper. Keep dry.";
+    } 
+    else if (item === "glass") {
+        result = "Recycle centre. Reuse as storage jar.";
+    } 
+    else if (item === "food") {
+        result = "Compost it 🌱. Reduce food waste.";
+    } 
+    else if (item === "battery") {
+        result = "Dispose at special centre ⚠️. Toxic material.";
+    }
+
+    document.getElementById("result").innerHTML = result;
+}
+</script>
+
+</body>
+</html>
